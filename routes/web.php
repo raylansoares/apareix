@@ -16,3 +16,4 @@ Route::get('/', 'Web\LandingPageController@index')->name('SPA');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('users', 'Web\UserController');

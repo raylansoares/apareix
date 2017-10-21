@@ -12,5 +12,7 @@ class UsersTableSeeder extends Seeder
             'email'    => 'admin@apareix.com',
             'password' => bcrypt('admin'),
         ));
+
+        factory(App\Models\User::class, 30)->create();
     }
 }

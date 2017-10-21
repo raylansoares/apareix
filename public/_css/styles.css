@@ -292,21 +292,21 @@ a.btn-cta {
   background-position: center center;
 }
 .hero-carousel .carousel-inner .item-1 {
-  background-image: url('../images/hero-1.jpg');
+  background-image: url('../_images/hero-1.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .hero-carousel .carousel-inner .item-2 {
-  background-image: url('../images/hero-2.jpg');
+  background-image: url('../_images/hero-2.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .hero-carousel .carousel-inner .item-3 {
-  background-image: url('../images/hero-3.jpg');
+  background-image: url('../_images/hero-3.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -421,7 +421,7 @@ a.btn-cta {
 }
 /* ======= Testimonials Section ======= */
 .testimonials-section {
-  background: #40babd url('../images/map.png') no-repeat center center;
+  background: #40babd url('../_images/map.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -747,7 +747,7 @@ a.btn-cta {
 .contact-section {
   padding-top: 90px;
   padding-bottom: 90px;
-  background: #494d55 url('../images/map.png') no-repeat center center;
+  background: #494d55 url('../_images/map.png') no-repeat center center;
   color: #fff;
 }
 .contact-section .section-title {

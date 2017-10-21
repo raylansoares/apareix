@@ -2,7 +2,7 @@
 
 @section('adminlte_css')
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/css/auth.css') }}">
-    @yield('css')
+    @yield('_css')
 @stop
 
 @section('body_class', 'login-page')

@@ -1,5 +1,5 @@
 javascript:
-  config_file: js/.jshintrc
+  config_file: _js/.jshintrc
   enabled: true
 scss:
   enabled: false

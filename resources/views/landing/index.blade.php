@@ -11,11 +11,11 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
-    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('_plugins/bootstrap/css/bootstrap.min.css') }}">
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('_plugins/font-awesome/css/font-awesome.css') }}">
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link id="theme-style" rel="stylesheet" href="{{ asset('_css/styles.css') }}">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -29,7 +29,7 @@
     <div class="container">
         <h1 class="logo">
             <a class="scrollto" href="#hero">
-                <span class="logo-icon-wrapper"><img class="logo-icon" src="{{ asset('images/logo-icon.svg') }}" alt="icon"></span>
+                <span class="logo-icon-wrapper"><img class="logo-icon" src="{{ asset('_images/logo-icon.svg') }}" alt="icon"></span>
                 <span class="text"><span class="highlight">APP</span>KIT</span></a>
         </h1><!--//logo-->
         <nav class="main-nav navbar-right" role="navigation">
@@ -62,7 +62,7 @@
             <div class="container">
                 <div class="row">
                     <div class="figure-holder">
-                        <img class="figure-image img-responsive" src="{{ asset('images/imac.png') }}" alt="image" />
+                        <img class="figure-image img-responsive" src="{{ asset('_images/imac.png') }}" alt="image" />
                     </div><!--//figure-holder-->
                 </div><!--//row-->
             </div><!--//container-->
@@ -123,19 +123,19 @@
         <h2 class="section-title">Why Use AppKit?</h2>
         <p class="intro">Appkit uses modern front-end technologies and is packed with useful components and widgets to speed up your app development</p>
         <ul class="technologies list-inline">
-            <li><img src="{{ asset('images/logo-bootstrap.svg') }}" alt="Bootstrap"></li>
-            <li><img src="{{ asset('images/logo-angular.svg') }}" alt="Angular"></li>
-            <li><img src="{{ asset('images/logo-html5.svg') }}" alt="HTML5"></li>
-            <li><img src="{{ asset('images/logo-css3.svg') }}" alt="CSS3"></li>
-            <li><img src="{{ asset('images/logo-less.svg') }}" alt="Less"></li>
-            <li><img src="{{ asset('images/logo-jquery.svg') }}" alt="jQuery"></li>
+            <li><img src="{{ asset('__images') }}" alt="Bootstrap"></li>
+            <li><img src="{{ asset('_images/logo-angular.svg') }}" alt="Angular"></li>
+            <li><img src="{{ asset('_images/logo-html5.svg') }}" alt="HTML5"></li>
+            <li><img src="{{ asset('_images/logo-css3.svg') }}" alt="CSS3"></li>
+            <li><img src="{{ asset('_images/logo-less.svg') }}" alt="Less"></li>
+            <li><img src="{{ asset('_images/logo-jquery.svg') }}" alt="jQuery"></li>
         </ul>
 
         <div class="items-wrapper row">
             <div class="item col-sm-4 col-xs-12">
                 <div class="item-inner">
                     <div class="figure-holder">
-                        <img class="figure-image" src="{{ asset('images/figure-1.png') }}" alt="image">
+                        <img class="figure-image" src="{{ asset('_images/figure-1.png') }}" alt="image">
                     </div><!--//figure-holder-->
                     <h3 class="item-title">UX-Centered Design</h3>
                     <div class="item-desc">
@@ -146,7 +146,7 @@
             <div class="item col-sm-4 col-xs-12">
                 <div class="item-inner">
                     <div class="figure-holder">
-                        <img class="figure-image" src="{{ asset('images/figure-2.png') }}" alt="image">
+                        <img class="figure-image" src="{{ asset('_images/figure-2.png') }}" alt="image">
                     </div><!--//figure-holder-->
                     <h3 class="item-title">Supercharge App Development</h3>
                     <div class="item-desc">
@@ -156,7 +156,7 @@
             <div class="item col-sm-4 col-xs-12">
                 <div class="item-inner">
                     <div class="figure-holder">
-                        <img class="figure-image" src="{{ asset('images/figure-3.png') }}" alt="image">
+                        <img class="figure-image" src="{{ asset('_images/figure-3.png') }}" alt="image">
                     </div><!--//figure-holder-->
                     <h3 class="item-title">Mobile First</h3>
                     <div class="item-desc">
@@ -172,7 +172,7 @@
         <h2 class="section-title text-center">Many Happy Customers</h2>
         <div class="item center-block">
             <div class="profile-holder">
-                <img class="profile-image" src="{{ asset('images/profile-1.png') }}" alt="profile">
+                <img class="profile-image" src="{{ asset('_images/profile-1.png') }}" alt="profile">
             </div>
             <div class="quote-holder">
                 <blockquote class="quote">
@@ -186,7 +186,7 @@
         </div><!--//item-->
         <div class="item item-reversed center-block">
             <div class="profile-holder">
-                <img class="profile-image" src="{{ asset('images/profile-2.png') }}" alt="profile">
+                <img class="profile-image" src="{{ asset('_images/profile-2.png') }}" alt="profile">
             </div>
             <div class="quote-holder">
                 <blockquote class="quote">
@@ -200,7 +200,7 @@
         </div><!--//item-->
         <div class="item center-block">
             <div class="profile-holder">
-                <img class="profile-image" src="{{ asset('images/profile-3.png') }}" alt="profile">
+                <img class="profile-image" src="{{ asset('_images/profile-3.png') }}" alt="profile">
             </div>
             <div class="quote-holder">
                 <blockquote class="quote">
@@ -214,7 +214,7 @@
         </div><!--//item-->
         <div class="item item-reversed center-block">
             <div class="profile-holder">
-                <img class="profile-image" src="{{ asset('images/profile-4.png') }}" alt="profile">
+                <img class="profile-image" src="{{ asset('_images/profile-4.png') }}" alt="profile">
             </div>
             <div class="quote-holder">
                 <blockquote class="quote">
@@ -252,28 +252,28 @@
             <!-- Tab panes -->
             <div class="feature-content tab-content col-md-8 col-sm-6 col-xs-12 col-md-pull-4 col-sm-pull-6 col-xs-pull-0">
                 <div role="tabpanel" class="tab-pane fade in active" id="feature-1">
-                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('images/feature-1.png') }}" alt="screenshot" ></a>
+                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('_images/feature-1.png') }}" alt="screenshot" ></a>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="feature-2">
-                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('images/feature-2.png') }}" alt="screenshot" ></a>
+                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('_images/feature-2.png') }}" alt="screenshot" ></a>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="feature-3">
-                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('images/feature-3.png') }}" alt="screenshot" ></a>
+                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('_images/feature-3.png') }}" alt="screenshot" ></a>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="feature-4">
-                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('images/feature-4.png') }}" alt="screenshot" ></a>
+                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('_images/feature-4.png') }}" alt="screenshot" ></a>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="feature-5">
-                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('images/feature-5.png') }}" alt="screenshot" ></a>
+                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('_images/feature-5.png') }}" alt="screenshot" ></a>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="feature-6">
-                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('images/feature-6.png') }}" alt="screenshot" ></a>
+                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('_images/feature-6.png') }}" alt="screenshot" ></a>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="feature-7">
-                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('images/feature-7.png') }}" alt="screenshot" ></a>
+                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('_images/feature-7.png') }}" alt="screenshot" ></a>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="feature-8">
-                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('images/feature-8.png') }}" alt="screenshot" ></a>
+                    <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="{{ asset('_images/feature-8.png') }}" alt="screenshot" ></a>
                 </div>
 
             </div><!--//feature-content-->
@@ -360,9 +360,9 @@
 </footer>
 
 <!-- Javascript -->
-<script type="text/javascript" src="{{ asset('plugins/jquery-1.12.3.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/jquery-scrollTo/jquery.scrollTo.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('_plugins/jquery-1.12.3.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('_plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('_plugins/jquery-scrollTo/jquery.scrollTo.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('_js/main.js') }}"></script>
 </body>
 </html>

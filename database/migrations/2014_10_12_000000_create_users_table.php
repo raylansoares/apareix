@@ -6,15 +6,11 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateUsersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('avatar')->default(env("APP_URL").'/images/users/placeholder-user.png')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
@@ -23,11 +19,6 @@ class CreateUsersTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('users');
