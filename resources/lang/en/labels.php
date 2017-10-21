@@ -1,9 +1,10 @@
 <?php
 
 return [
-    'name'         => 'name',
-    'email'        => 'email',
-    'status'       => 'status',
-    'actions'      => 'actions'
-
+    'name'         => 'Name',
+    'email'        => 'Email',
+    'status'       => 'Status',
+    'actions'      => 'Actions',
+    'password'     => 'Password',
+    'permissions'  => 'Permissions',
 ];

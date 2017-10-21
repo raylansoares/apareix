@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'show'                 => 'show',
-    'enable_disable_all'   => 'enable/disable all'
+    'show'                 => 'Show',
+    'enable_disable_all'   => 'Enable/disable all',
+    'create_user'          => 'Create a new user',
 ];
