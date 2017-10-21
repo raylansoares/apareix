@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'Web\LandingPageController@index')->name('SPA');
+Route::get('/terms', 'Web\LandingPageController@terms')->name('home.terms');
 
 Auth::routes();
 

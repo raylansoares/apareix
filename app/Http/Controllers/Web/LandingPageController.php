@@ -11,4 +11,9 @@ class LandingPageController extends Controller
     {
         return view('landing.index');
     }
+
+    public function terms()
+    {
+        return view('texts.policy');
+    }
 }
