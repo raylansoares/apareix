@@ -42,6 +42,17 @@
 
             <div class="col-sm-12">
                 <div class="form-group">
+                    <label for="permission_id">@lang('labels.profile')</label>
+                    <select class="select2 form-control" id="role_id" name="role_id" required>
+                        @foreach($roles as $role)
+                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
                     <button type="submit" class="btn btn-block btn-success">
                         <i class="fa fa-save"></i>
                         @lang('buttons.create_user')

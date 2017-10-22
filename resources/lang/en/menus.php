@@ -2,5 +2,6 @@
 
 return [
     'mi.dashboard' => 'Dashboard',
-    'mi.users' => 'Users',
+    'users' => 'Users & Permissions',
+    'instagram' => 'Instagram',
 ];

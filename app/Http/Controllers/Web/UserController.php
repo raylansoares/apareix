@@ -23,14 +23,10 @@ class UserController extends Controller
             compact('users', 'roles', 'permissions'));
     }
 
-    public function show()
-    {
-        return 'aaeae';
-    }
-
     public function store(Request $request, ImageRepository $repo)
     {
-        $user = User::create($request->except('primaryImage'));
+        $user = User::create($request->except('primaryImage', 'role_id'));
+        $user->roles()->attach($request->role_id);
 
         if ($request->hasFile('primaryImage')) {
             $user->avatar = $repo->saveImage($request->primaryImage, $user->id, 'users', null, 250);

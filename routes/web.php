@@ -21,3 +21,5 @@ Route::resource('users', 'Web\UserController');
 Route::get('users/status/{ids}', 'Web\UserController@status')->name('users.status');
 
 Route::resource('profiles', 'Web\ProfileController');
+
+Route::get('/instagram', 'Web\InstagramController@index')->name('instagram.index');
