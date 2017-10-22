@@ -9,4 +9,5 @@ return [
     'password'     => 'Password',
     'permissions'  => 'Permissions',
     'profile'      => 'Profile',
+    'image'        => 'Image',
 ];

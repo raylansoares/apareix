@@ -17,10 +17,15 @@ class UserController extends Controller
         $permissions = Permission::all();
         $users       = User::with('roles')
             ->orderBy('created_at', 'desc')
-            ->paginate(5);
+            ->simplePaginate(5);
 
         return view('users.index',
             compact('users', 'roles', 'permissions'));
+    }
+
+    public function show()
+    {
+        return 'aaeae';
     }
 
     public function store(Request $request, ImageRepository $repo)
@@ -43,7 +48,6 @@ class UserController extends Controller
 
     public function status($id)
     {
-
         $ids = explode(',', $id);
         $names = null;
 
@@ -51,9 +55,11 @@ class UserController extends Controller
             $user = User::find($id);
             $name = $user->name;
             if ($user->status == 0) {
-                $user->update(['status' => 1]);
+                $user->status = 1;
+                $user->save();
             } elseif ($user->status == 1) {
-                $user->update(['status' => 0]);
+                $user->status = 0;
+                $user->save();
             }
             $names .= $name . '; ';
         }

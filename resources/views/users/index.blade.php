@@ -30,3 +30,6 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
 @endsection
+
+@section('js')
+@endsection
