@@ -40,4 +40,28 @@ class UserController extends Controller
                 'type' => 'success',
                 'icon' => 'check']);
     }
+
+    public function status($id)
+    {
+
+        $ids = explode(',', $id);
+        $names = null;
+
+        foreach ($ids as $id) {
+            $user = User::find($id);
+            $name = $user->name;
+            if ($user->status == 0) {
+                $user->update(['status' => 1]);
+            } elseif ($user->status == 1) {
+                $user->update(['status' => 0]);
+            }
+            $names .= $name . '; ';
+        }
+
+        return back()
+            ->with([
+                'message' => 'User [' . $names . '] successfully updated!',
+                'type' => 'success',
+                'icon' => 'check']);
+    }
 }

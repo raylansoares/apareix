@@ -20,4 +20,18 @@ class ProfileController extends Controller
             'type' => 'success',
             'icon' => 'check']);
     }
+
+    public function destroy($id)
+    {
+        $role = Role::find($id);
+
+        $name = $role->name;
+        $role->delete();
+
+        return back()
+            ->with([
+                'message' => 'Profile ['.$name.'] successfully deleted!',
+                'type' => 'success',
+                'icon' => 'check']);
+    }
 }

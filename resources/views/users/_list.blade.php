@@ -28,7 +28,11 @@
                         <input type="checkbox" id="{{ $user->id }}" class="minimal checkUser">
                     </td>
                     <td class="text-center">
-                        <a href="{{ route('users.show', $user->id) }}">
+                        <a
+                            id="seeUser"
+                            title="See info about user"
+                            data-toggle="modal"
+                            data-target="#UserModal{{$user->id}}">
                             <img src="{{ $user->avatar }}" style="border-radius: 50%;" height="50px" width="50px" alt="{{$user->name}}" title="{{$user->name}}">
                         </a>
                     </td>
@@ -48,6 +52,11 @@
                         @endif
                     </td>
                 </tr>
+
+                <div class="row">
+                    @include('users.modals.show')
+                </div>
+
             @endforeach
             </tbody>
             <tfoot>
