@@ -50,12 +50,10 @@
                         class="btn btn-default"
                         data-dismiss="modal" style="float: left">Close</button>
 
-                <button form="formUpdate" type="submit"
-                        class="btn btn-sm btn-info"
-                        style="float: right">
-                    <i class="fa fa-edit"></i>
-                    @lang('buttons.edit')
-                </button>
+                <input name="form_update" form="formUpdate" type="submit"
+                        class="btn btn-info"
+                        style="float: right"
+                        value="@lang('buttons.edit')">
             </div>
         </div>
     </div>

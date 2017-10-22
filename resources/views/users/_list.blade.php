@@ -26,19 +26,19 @@
             @foreach($users as $user)
                     <tr>
                         <td style="vertical-align: middle;">
-                            <form id="formEnableDisable" action="{{ route('users.status', $ids = $user->id) }}" method="get">
-                                <input type="checkbox" id="{{ $user->id }}" class="minimal checkUser">
+                            <form name="form_status" id="formEnableDisable" action="{{ route('users.status', $ids = $user->id) }}" method="get">
+                                <input type="checkbox" name="ids[]" id="{{ $user->id }}" class="minimal checkUser">
                             </form>
                         </td>
                         <td class="text-center">
-                            <form id="formUpdate" method="post" action="{{route('users.update', $user->id)}}">
+                            <form name="form_update" id="formUpdate" method="post" action="{{route('users.update', $user->id)}}">
                                 {{ csrf_field() }}
                                 {{ method_field('PUT') }}
                                 <a
-                                        id="seeUser"
-                                        title="See info about user"
-                                        data-toggle="modal"
-                                        data-target="#UserModal{{ $user->id }}">
+                                    id="seeUser"
+                                    title="See info about user"
+                                    data-toggle="modal"
+                                    data-target="#UserModal{{ $user->id }}">
                                     <img src="{{ $user->avatar }}" style="border-radius: 50%;" height="50px" width="50px" alt="{{$user->name}}" title="{{$user->name}}">
                                 </a>
                                 @include('users.modals.show')
@@ -86,7 +86,7 @@
                 </td>
 
                 <td colspan="2" class="text-center">
-                    <button form="formEnableDisable" type="submit" id="enableAll" class="btn btn-default btn-block" title="" disabled>
+                    <button name="form_status" form="formEnableDisable" type="button" id="enableAll" class="btn btn-default btn-block" title="" disabled>
                         <i class="fa fa-exchange"></i>
                         @lang('buttons.enable_disable_all')
                     </button>
@@ -101,5 +101,4 @@
 @endsection
 
 @section('js')
-
 @endsection

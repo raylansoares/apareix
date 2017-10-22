@@ -44,3 +44,7 @@ function checkEnable() {
 function statusAll() {
     window.location.href = "users/status/"+users;
 }
+
+$('#enableAll').click(function(){
+
+});

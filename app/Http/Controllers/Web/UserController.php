@@ -71,7 +71,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->update($request->all());
-        
+
         $user->roles()->sync($request->role_id);
 
         $name = $user->name;
