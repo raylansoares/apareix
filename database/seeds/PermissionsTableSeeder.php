@@ -18,6 +18,7 @@ class PermissionsTableSeeder extends Seeder
             ['name' => 'list_instagram_acc',   'description' => 'Has access to list all instagram acc on sys.'],
             ['name' => 'delete_instagram_acc', 'description' => 'Has access to delete instagram acc on sys.'],
         ];
+        
 
         DB::table('permissions')->insert($permissions);
     }
