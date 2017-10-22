@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Permission;
+use App\Models\Role;
 use App\Models\User;
 use App\Repositories\ImageRepository;
 use Illuminate\Http\Request;
@@ -11,10 +13,14 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::orderBy('created_at', 'desc')->get();
+        $users       = User::with('roles')
+            ->orderBy('created_at', 'asc')
+            ->simplePaginate(10);
+        $roles       = Role::all();
+        $permissions = Permission::all();
 
         return view('users.index',
-            compact('users'));
+            compact('users', 'roles', 'permissions'));
     }
 
     public function store(Request $request, ImageRepository $repo)

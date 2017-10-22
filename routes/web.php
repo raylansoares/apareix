@@ -18,3 +18,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('users', 'Web\UserController');
+Route::resource('profiles', 'Web\ProfileController');
