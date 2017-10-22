@@ -42,7 +42,7 @@
 
             <div class="col-sm-12">
                 <div class="form-group">
-                    <label for="permission_id">@lang('labels.profile')</label>
+                    <label for="role_id">@lang('labels.profile')</label>
                     <select class="select2 form-control" id="role_id" name="role_id" required>
                         @foreach($roles as $role)
                             <option value="{{ $role->id }}">{{ $role->name }}</option>

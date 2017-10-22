@@ -16,27 +16,33 @@
             <tr>
                 <th class="col-sm-1">#</th>
                 <th class="col-sm-1">@lang('labels.image')</th>
-                <th class="col-sm-2">@lang('labels.name')</th>
+                <th class="col-sm-3">@lang('labels.name')</th>
                 <th class="col-sm-3">@lang('labels.email')</th>
-                <th class="col-sm-3 text-center">@lang('labels.profile')</th>
+                <th class="col-sm-2 text-center">@lang('labels.profile')</th>
                 <th class="col-sm-1">@lang('labels.status')</th>
             </tr>
             </thead>
             <tbody>
             @foreach($users as $user)
-                <form action="{{ route('users.status', $ids = $user->id) }}" method="get">
                     <tr>
                         <td style="vertical-align: middle;">
-                            <input type="checkbox" id="{{ $user->id }}" class="minimal checkUser">
+                            <form id="formEnableDisable" action="{{ route('users.status', $ids = $user->id) }}" method="get">
+                                <input type="checkbox" id="{{ $user->id }}" class="minimal checkUser">
+                            </form>
                         </td>
                         <td class="text-center">
-                            <a
-                                id="seeUser"
-                                title="See info about user"
-                                data-toggle="modal"
-                                data-target="#UserModal{{ $user->id }}">
-                                <img src="{{ $user->avatar }}" style="border-radius: 50%;" height="50px" width="50px" alt="{{$user->name}}" title="{{$user->name}}">
-                            </a>
+                            <form id="formUpdate" method="post" action="{{route('users.update', $user->id)}}">
+                                {{ csrf_field() }}
+                                {{ method_field('PUT') }}
+                                <a
+                                        id="seeUser"
+                                        title="See info about user"
+                                        data-toggle="modal"
+                                        data-target="#UserModal{{ $user->id }}">
+                                    <img src="{{ $user->avatar }}" style="border-radius: 50%;" height="50px" width="50px" alt="{{$user->name}}" title="{{$user->name}}">
+                                </a>
+                                @include('users.modals.show')
+                            </form>
                         </td>
                         <td style="vertical-align: middle;">
                             <label>
@@ -55,14 +61,14 @@
                         </td>
                         <td class="text-center">
                             @if($user->status == 1)
-                                <a href="{{route('users.status', $user->id)}}"
+                                <a href="{{ route('users.status', $user->id) }}"
                                    class="btn btn-sm btn-success"
                                    title="">
                                     <i class="fa fa-check"></i>
                                     @lang('buttons.enable')
                                 </a>
                             @elseif($user->status == 0)
-                                <a href="{{route('users.status', $user->id)}}"
+                                <a href="{{ route('users.status', $user->id) }}"
                                    class="btn btn-sm btn-default"
                                    title="">
                                     <i class="fa fa-ban"></i>
@@ -71,11 +77,6 @@
                             @endif
                         </td>
                     </tr>
-
-                    <div class="row">
-                        @include('users.modals.show')
-                    </div>
-                </form>
             @endforeach
             </tbody>
             <tfoot>
@@ -85,7 +86,7 @@
                 </td>
 
                 <td colspan="2" class="text-center">
-                    <button type="submit" id="enableAll" class="btn btn-default btn-block" title="" disabled>
+                    <button form="formEnableDisable" type="submit" id="enableAll" class="btn btn-default btn-block" title="" disabled>
                         <i class="fa fa-exchange"></i>
                         @lang('buttons.enable_disable_all')
                     </button>

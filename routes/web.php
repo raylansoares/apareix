@@ -16,10 +16,12 @@ Route::get('/terms', 'Web\LandingPageController@terms')->name('home.terms');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('users', 'Web\UserController');
-Route::get('users/status/{ids}', 'Web\UserController@status')->name('users.status');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('users', 'Web\UserController');
+    Route::get('users/status/{ids}', 'Web\UserController@status')->name('users.status');
 
-Route::resource('profiles', 'Web\ProfileController');
+    Route::resource('profiles', 'Web\ProfileController');
 
-Route::get('/instagram', 'Web\InstagramController@index')->name('instagram.index');
+    Route::get('/instagram', 'Web\InstagramController@index')->name('instagram.index');
+});

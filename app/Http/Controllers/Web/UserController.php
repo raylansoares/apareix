@@ -66,4 +66,20 @@ class UserController extends Controller
                 'type' => 'success',
                 'icon' => 'check']);
     }
+
+    public function update($id, Request $request)
+    {
+        $user = User::find($id);
+        $user->update($request->all());
+        
+        $user->roles()->sync($request->role_id);
+
+        $name = $user->name;
+
+        return back()
+            ->with([
+                'message' => 'Admin ['.$name.'] successfully updated!',
+                'type' => 'success',
+                'icon' => 'check']);
+    }
 }
