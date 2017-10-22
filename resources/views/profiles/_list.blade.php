@@ -24,9 +24,19 @@
             @foreach($roles as $role)
                 <tr>
                     <td style="text-align: center">
-                        {{ $role->name }}
+                        <a
+                           id="seeProfile"
+                           title="See info about profile"
+                           data-toggle="modal"
+                           data-target="#RoleModal{{$role->id}}">
+                            {{ $role->name }}
+                        </a>
                     </td>
                 </tr>
+
+                <div class="row">
+                    @include('profiles.modals.show')
+                </div>
             @endforeach
             </tbody>
         </table>
