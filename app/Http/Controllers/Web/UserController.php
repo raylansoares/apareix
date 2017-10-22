@@ -13,11 +13,11 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users       = User::with('roles')
-            ->orderBy('created_at', 'asc')
-            ->simplePaginate(10);
         $roles       = Role::all();
         $permissions = Permission::all();
+        $users       = User::with('roles')
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
 
         return view('users.index',
             compact('users', 'roles', 'permissions'));

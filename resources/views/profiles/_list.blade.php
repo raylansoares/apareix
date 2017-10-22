@@ -23,7 +23,7 @@
             <tbody>
             @foreach($roles as $role)
                 <tr>
-                    <td style="text-align: center">
+                    <td style="text-align: center;">
                         <a
                            id="seeProfile"
                            title="See info about profile"

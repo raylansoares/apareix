@@ -13,6 +13,6 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('admin'),
         ));
 
-        factory(App\Models\User::class, 30)->create();
+        factory(App\Models\User::class, 5)->create();
     }
 }
