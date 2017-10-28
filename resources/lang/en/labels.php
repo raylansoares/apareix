@@ -10,4 +10,8 @@ return [
     'permissions'  => 'Permissions',
     'profile'      => 'Profile',
     'image'        => 'Image',
+    'thumb'        => 'Thumb',
+    'posted_at'    => 'Posted at',
+    'likes'        => 'Likes',
+    'comments'     => 'Comments'
 ];

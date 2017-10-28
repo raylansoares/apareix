@@ -18,7 +18,7 @@
         </div>
 
         <div class="col-sm-8">
-            @includeIf(!is_null($timeline), 'instagrams._list')
+            @include('instagrams._list')
         </div>
     </div>
 

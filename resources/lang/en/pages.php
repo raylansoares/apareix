@@ -10,4 +10,6 @@ return [
     'instagrams'          => 'Instagram',
     'instagrams.connect'  => 'Connect new Instagram Account',
     'instagrams.profiles' => 'My Profiles',
+
+    'timeline'            => 'Timeline',
 ];

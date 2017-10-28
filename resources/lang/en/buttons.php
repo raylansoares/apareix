@@ -7,6 +7,7 @@ return [
     'disable'              => 'Disable',
     'edit'                 => 'Edit',
     'save'                 => 'Save',
+    'comment'              => 'Comment',
 
     'enable_disable_all'   => 'Enable/disable all',
     'connect_instagram'    => 'Conectar minha conta',
