@@ -13,13 +13,12 @@
 
     <div class="row">
         <div class="col-sm-4">
-            <br>
-                @include('instagrams._create')
+            @include('instagrams._create')
             <br>
         </div>
 
         <div class="col-sm-8">
-
+            @includeIf(!is_null($timeline), 'instagrams._list')
         </div>
     </div>
 
