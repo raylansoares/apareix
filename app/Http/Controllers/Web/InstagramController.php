@@ -9,6 +9,6 @@ class InstagramController extends Controller
 {
     public function index()
     {
-        return "instagram view here";
+        return view('instagrams.index');
     }
 }
