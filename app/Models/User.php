@@ -18,6 +18,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function instagrams()
+    {
+        return $this->belongsToMany(Instagram::class);
+    }
+
     public function roles()
     {
         return $this->belongsToMany(Role::class);

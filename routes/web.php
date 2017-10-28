@@ -24,4 +24,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('profiles', 'Web\ProfileController');
 
     Route::get('/instagram', 'Web\InstagramController@index')->name('instagram.index');
+    Route::get('/instagram/callback', 'Web\InstagramController@callback')->name('instagram.callback');
+    Route::get('/instagram/connect', 'Web\InstagramController@connect')->name('instagram.connect');
 });

@@ -12,20 +12,17 @@
     </div>
 
     <div class="box-body">
-        <form method="post" action="#">
-            {{ csrf_field() }}
-
             <div class="col-sm-12">
                 <div class="form-group">
-                    <button type="submit"
-                            style="background-color: #8a3ab9;"
-                            class="btn btn-block btn-success">
-                        <i class="fa fa-instagram"></i> @lang('buttons.connect_instagram')
-                    </button>
+                    <a href="{{ route('instagram.connect') }}">
+                        <button type="button"
+                                style="background-color: #8a3ab9;"
+                                class="btn btn-block btn-success">
+                            <i class="fa fa-instagram"></i> @lang('buttons.connect_instagram')
+                        </button>
+                    </a>
                 </div>
             </div>
-
-        </form>
     </div>
 </div>
 

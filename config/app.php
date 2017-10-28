@@ -181,7 +181,8 @@ return [
          * Custom Service Providers...
          */
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+        Mbarwick83\Instagram\InstagramServiceProvider::class,
 
     ],
 
@@ -232,6 +233,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Instagram' => Mbarwick83\Instagram\Facades\Instagram::class,
 
     ],
 
