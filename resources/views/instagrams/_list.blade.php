@@ -1,3 +1,4 @@
+{{--VICTOR - 12/11 - Testando paginação--}}
 <div class="box">
     <div class="box-header with-border">
         <h3 class="box-title">
@@ -11,7 +12,7 @@
     </div>
 
     <div class="box-body">
-        <table id="timelineTable" class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover">
             <thead>
             <tr>
                 <th class="col-sm-1">
@@ -28,8 +29,9 @@
                 </th>
             </tr>
             </thead>
+
             <tbody>
-            @foreach($timeline as $info)
+            @foreach($entries as $info)
                 <tr>
                     <td>
                         <a href="{{ $info['link'] }}" target="_blank">
@@ -44,7 +46,7 @@
                     <td>
                         {{ $info['comments']['count'] }}
                     </td>
-                    <td>
+                    <td class="text-right">
                         <button
                                 style="background-color: #cd486b"
                                 type="submit"
@@ -56,9 +58,14 @@
                 </tr>
             @endforeach
             </tbody>
+
         </table>
+
+        {!! $entries->render() !!}
+
     </div>
 </div>
+
 
 @section('css')
 @endsection

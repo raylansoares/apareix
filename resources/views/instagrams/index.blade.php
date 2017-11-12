@@ -12,14 +12,21 @@
     @endif
 
     <div class="row">
+
         <div class="col-sm-4">
             @include('instagrams._create')
             <br>
         </div>
 
-        <div class="col-sm-8">
-            @include('instagrams._list')
-        </div>
+        {{--VICTOR - 12/11 - Verifica se a variável timeline já está setada--}}
+        @if(isset($entries))
+
+            <div class="col-sm-8">
+                @include('instagrams._list')
+            </div>
+
+        @endif
+
     </div>
 
 @endsection

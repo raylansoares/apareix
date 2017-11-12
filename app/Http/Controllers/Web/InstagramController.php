@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mbarwick83\Instagram\Instagram;
@@ -12,21 +14,34 @@ class InstagramController extends Controller
 {
     public function index(Instagram $instagram)
     {
+        $userLogged = Auth::user()->id;
+
         $profiles = DB::table('users')
             ->join('instagram_user', 'users.id', '=', 'instagram_user.user_id')
             ->join('instagrams', 'instagram_user.user_id', '=', 'instagrams.id')
-            ->where('instagram_user.user_id', Auth::user()->id)
+            ->where('instagram_user.user_id', $userLogged)
             ->select('instagrams.*')
             ->get();
 
-        foreach($profiles as $profile)
+        activity()
+            ->causedBy($userLogged)
+            ->log('Visited page Instagram');
+
+        if(!$profiles->isEmpty())
         {
-            $data = $instagram->get('v1/users/'.$profile->id_insta.'/media/recent/', ['access_token' => $profile->access_token]);
-        }
+            foreach($profiles as $profile)
+            {
+                $data = $instagram->get('v1/users/'.$profile->id_insta.'/media/recent/', ['access_token' => $profile->access_token]);
+            }
 
-        $timeline = ($data['data']);
+            $array       = $data['data'];
+            $currentPage = LengthAwarePaginator::resolveCurrentPage();
+            $col         = new Collection($array);
+            $perPage     = 5;
+            $currentPageSearchResults = $col->slice(($currentPage - 1) * $perPage, $perPage)->all();
+            $entries = new LengthAwarePaginator($currentPageSearchResults, count($col), $perPage, $currentPage,['path' => LengthAwarePaginator::resolveCurrentPath()] );        }
 
-        return view('instagrams.index', compact('profiles', 'timeline'));
+        return view('instagrams.index', compact('profiles', 'entries'));
     }
 
     public function callback(Request $request, Instagram $instagram)
