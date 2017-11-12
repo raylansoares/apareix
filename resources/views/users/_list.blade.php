@@ -16,10 +16,10 @@
             <tr>
                 <th class="col-sm-1">#</th>
                 <th class="col-sm-1">@lang('labels.image')</th>
-                <th class="col-sm-3">@lang('labels.name')</th>
+                <th class="col-sm-2">@lang('labels.name')</th>
                 <th class="col-sm-3">@lang('labels.email')</th>
                 <th class="col-sm-2 text-center">@lang('labels.profile')</th>
-                <th class="col-sm-1">@lang('labels.status')</th>
+                <th class="col-sm-3">@lang('labels.actions')</th>
             </tr>
             </thead>
             <tbody>
@@ -75,6 +75,13 @@
                                     @lang('buttons.disable')
                                 </a>
                             @endif
+
+                                <a href="#"
+                                   class="btn btn-sm btn-primary"
+                                   title="See hipstory">
+                                    <i class="fa fa-bookmark"></i>
+                                    @lang('buttons.view')
+                                </a>
                         </td>
                     </tr>
             @endforeach

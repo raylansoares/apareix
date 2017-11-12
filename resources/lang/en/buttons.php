@@ -8,6 +8,7 @@ return [
     'edit'                 => 'Edit',
     'save'                 => 'Save',
     'comment'              => 'Comment',
+    'view'                 => 'View History',
 
     'enable_disable_all'   => 'Enable/disable all',
     'connect_instagram'    => 'Conectar minha conta',
