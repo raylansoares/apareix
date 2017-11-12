@@ -76,6 +76,12 @@ class InstagramController extends Controller
 
     public function connect(Instagram $instagram)
     {
+        $userLogged = Auth::user()->id;
+
+        activity()
+            ->causedBy($userLogged)
+            ->log('Try to connect a user in Instagram');
+
         return redirect($instagram->getLoginUrl());
     }
 }

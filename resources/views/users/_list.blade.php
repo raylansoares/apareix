@@ -76,9 +76,9 @@
                                 </a>
                             @endif
 
-                                <a href="#"
+                                <a href="{{ route('users.historic', $user->id) }}"
                                    class="btn btn-sm btn-primary"
-                                   title="See hipstory">
+                                   title="See historic">
                                     <i class="fa fa-bookmark"></i>
                                     @lang('buttons.view')
                                 </a>

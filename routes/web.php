@@ -18,7 +18,9 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
+
     Route::resource('users', 'Web\UserController');
+    Route::get('users/{id}/historic', 'Web\UserController@historic')->name('users.historic');
     Route::get('users/status/{ids}', 'Web\UserController@status')->name('users.status');
 
     Route::resource('profiles', 'Web\ProfileController');

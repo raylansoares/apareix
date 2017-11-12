@@ -8,6 +8,8 @@ use App\Models\Role;
 use App\Models\User;
 use App\Repositories\ImageRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Spatie\Activitylog\Models\Activity;
 
 class UserController extends Controller
 {
@@ -81,5 +83,15 @@ class UserController extends Controller
                 'message' => 'Admin ['.$name.'] successfully updated!',
                 'type' => 'success',
                 'icon' => 'check']);
+    }
+
+    public function historic($id)
+    {
+        $historic = DB::table('activity_log')
+                        ->where('causer_id', $id)
+                        ->orderBy('created_at', 'desc')
+                        ->get(['created_at', 'description']);
+
+        return view('users.historic', compact('historic'));
     }
 }

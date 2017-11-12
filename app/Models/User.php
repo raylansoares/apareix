@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         if($this->hasAnyRoles('Master Admin')) true;
     }
+
+    public function getLogNameToUse(string $eventName = ''): string
+    {
+        return 'user_log';
+    }
 }
