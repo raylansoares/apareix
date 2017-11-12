@@ -13,7 +13,7 @@ return [
     |
     */
     'no_profile' => 'No profile associate',
-
+    'no_account' => 'You have no account yet. Connect to get started.',
 
 
 

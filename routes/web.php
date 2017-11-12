@@ -16,10 +16,10 @@ Route::get('/terms', 'Web\LandingPageController@terms')->name('home.terms');
 
 Auth::routes();
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'status']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::resource('users', 'Web\UserController');
+    Route::resource('users', 'Web\UserController')->middleware('admin');
     Route::get('users/{id}/historic', 'Web\UserController@historic')->name('users.historic');
     Route::get('users/status/{ids}', 'Web\UserController@status')->name('users.status');
 

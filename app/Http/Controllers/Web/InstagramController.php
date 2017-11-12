@@ -29,9 +29,9 @@ class InstagramController extends Controller
 
         if(!$profiles->isEmpty())
         {
-            foreach($profiles as $profile)
+            foreach ($profiles as $profile)
             {
-                $data = $instagram->get('v1/users/'.$profile->id_insta.'/media/recent/', ['access_token' => $profile->access_token]);
+                $data = $instagram->get('v1/users/' . $profile->id_insta . '/media/recent/', ['access_token' => $profile->access_token]);
             }
 
             $array       = $data['data'];
@@ -39,7 +39,8 @@ class InstagramController extends Controller
             $col         = new Collection($array);
             $perPage     = 5;
             $currentPageSearchResults = $col->slice(($currentPage - 1) * $perPage, $perPage)->all();
-            $entries = new LengthAwarePaginator($currentPageSearchResults, count($col), $perPage, $currentPage,['path' => LengthAwarePaginator::resolveCurrentPath()] );        }
+            $entries = new LengthAwarePaginator($currentPageSearchResults, count($col), $perPage, $currentPage,['path' => LengthAwarePaginator::resolveCurrentPath()] );
+        }
 
         return view('instagrams.index', compact('profiles', 'entries'));
     }
