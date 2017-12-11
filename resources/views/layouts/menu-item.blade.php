@@ -14,7 +14,6 @@
     </li>
 @endcan
 
-
 <li class="{{Request::segment(1) == 'instagram' ? 'active ' : ''}}">
     <a href="{{ route('instagram.index') }}">
         <i class="fa fa-fw fa-instagram"></i>
